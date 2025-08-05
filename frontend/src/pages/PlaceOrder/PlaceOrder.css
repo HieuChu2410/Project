@@ -1,0 +1,78 @@
+.place-order {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 50px;
+  margin-top: 100px;
+}
+.place-order-left {
+  width: 100%;
+  max-width: max(30%, 500px);
+}
+.place-order-left .title {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+.place-order-left input {
+  margin-bottom: 15px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #c5c5c5;
+  border-radius: 4px;
+  outline-color: tomato;
+}
+.place-order-left .multi-fields {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.place-order-right {
+  width: 100%;
+  max-width: max(40%, 500px);
+}
+.place-order .cart-total button {
+  margin-top: 30px;
+}
+
+/* Error styling */
+.input-group {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group input.error {
+  border-color: #ff4444;
+  background-color: #fff5f5;
+}
+
+.error-message {
+  color: #ff4444;
+  font-size: 12px;
+  margin-top: 4px; /* Lùi xuống một chút */
+  margin-bottom: 10px; /* Cách xa input tiếp theo */
+  display: block;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+/* Adjust multi-fields for input-group */
+.place-order-left .multi-fields .input-group {
+  flex: 1;
+  min-width: 0; /* Cho phép flex item co lại */
+}
+
+/* Đảm bảo input trong input-group có margin-bottom phù hợp */
+.input-group input {
+  margin-bottom: 5px; /* Giảm margin để error message không bị cách xa */
+}
+
+/* Đảm bảo input-group cuối cùng không có margin-bottom */
+.input-group:last-child {
+  margin-bottom: 0;
+}
