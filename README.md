@@ -97,4 +97,14 @@ Dự án Food Delivery App được xây dựng với hai loại giao diện ch�
 ### 1. Trang trủ ('/')
 
 - Hiển thị thông tin tổng quan về cửa hàng.
-   ![image](https://github.com/user-attachments/assets/8ea87d29-4127-40ff-b843-b6025d1f2cb0)
+   ![image](https://github.com/user-attachments/assets/03e6e15b-6a63-4758-aef2-19f996cb68ed).
+
+- Đưa ra các loại món mà cửa hàng đang bán.
+  ![image](https://github.com/user-attachments/assets/8b8427fe-5d04-4e45-8094-879fc06af219)
+
+### 2. Đăng nhập, đăng ký 
+- Khi ấn nút đăng nhập sẽ hiện ra from nhập email, mật khẩu.
+ ![image](https://github.com/user-attachments/assets/2cb31338-6508-4068-af26-9d4e73d13905)
+
+- Đăng nhập thành công sẽ hiện thông báo và có tài khoản để thực hiện việc đặt hàng.
+ ![image](https://github.com/user-attachments/assets/67f96227-ba89-4844-a8f3-27bc17166237)
