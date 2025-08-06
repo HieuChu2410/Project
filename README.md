@@ -82,3 +82,5 @@ npm run dev
 - Admin panel được tích hợp hoàn toàn vào frontend, không cần chạy riêng
 - Tất cả chức năng admin từ folder `admin/` đã được chuyển vào frontend
 - Có thể xóa folder `admin/` sau khi đã tích hợp thành công
+
+# Giao diện các trang
