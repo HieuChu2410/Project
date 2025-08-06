@@ -84,3 +84,17 @@ npm run dev
 - Có thể xóa folder `admin/` sau khi đã tích hợp thành công
 
 # Giao diện các trang
+Dự án Food Delivery App được xây dựng với hai loại giao diện chính, phục vụ cho hai nhóm người dùng riêng biệt: User (khách hàng) và Admin (quản trị viên).
+
+## Giao diện Admin
+- Giao diện quản trị đã được tích hợp trực tiếp vào frontend, sử dụng các thành phần từ thư viện Ant Design Vue để đảm bảo tính hiện đại, nhất quán và dễ sử dụng. Admin panel cho phép quản lý hệ thống thông qua các trang như: quản lý sản phẩm, đơn hàng, thương hiệu, kiểu dáng và kho hàng. Tất cả các chức năng admin được bảo vệ bằng hệ thống phân quyền thông qua trường role, đảm bảo chỉ người dùng có vai trò admin mới được truy cập.
+! Nếu một user thông thường cố truy cập trang quản trị, hệ thống sẽ tự động chuyển hướng về trang chủ, đảm bảo an toàn và đúng chức năng.
+
+## Giao diện User
+- Giao diện dành cho khách hàng được tùy biến từ template Adara - Modern & Multipurpose eCommerce Template, có bố cục rõ ràng, hiện đại, dễ thao tác. Người dùng có thể duyệt thực đơn, tìm kiếm món ăn, thêm vào giỏ hàng và đặt hàng một cách dễ dàng.
+- Toàn bộ giao diện được thiết kế thống nhất, tối ưu cho trải nghiệm người dùng lẫn quản trị viên, hỗ trợ hiệu quả cho cả phía frontend và backend.
+
+### 1. Trang trủ ('/')
+
+- Hiển thị thông tin tổng quan về cửa hàng.
+   ![image](https://github.com/user-attachments/assets/8ea87d29-4127-40ff-b843-b6025d1f2cb0)
