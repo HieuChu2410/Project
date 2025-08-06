@@ -39,6 +39,38 @@ const StoreContextProvider = (props) => {
     }
   }, [food_list, searchTerm]);
 
+  const clearCart = () => {
+    setCartItems({});
+    localStorage.removeItem("cartItems");
+    sessionStorage.removeItem("cartItems");
+  };
+
+  // Thêm useEffect để load cart khi token thay đổi
+  useEffect(() => {
+    if (token && user) {
+      // Load cart data khi có token và user
+      loadCartData(token);
+    } else if (!token) {
+      clearCart();
+    }
+  }, [token, user]);
+
+  // Thêm useEffect để reset cart khi token thay đổi
+  useEffect(() => {
+    if (!token) {
+      clearCart();
+    }
+  }, [token]);
+
+  // Thêm useEffect để đồng bộ cartItems với localStorage
+  useEffect(() => {
+    if (Object.keys(cartItems).length === 0) {
+      localStorage.removeItem("cartItems");
+    } else {
+      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    }
+  }, [cartItems]);
+
   const addToCart = async (itemId) => {
     try {
       // Always update local state first for better UX
@@ -125,11 +157,11 @@ const StoreContextProvider = (props) => {
       if (response.data.success && response.data.CartData) {
         setCartItems(response.data.CartData);
       } else {
-        setCartItems({}); // Fallback to empty object
+        clearCart(); // Fallback to empty object
       }
     } catch (error) {
       console.error("Error loading cart data:", error);
-      setCartItems({}); // Fallback to empty object
+      clearCart(); // Fallback to empty object
     }
   };
 
@@ -183,6 +215,7 @@ const StoreContextProvider = (props) => {
           // Không có token, đảm bảo state sạch
           setToken("");
           setUser(null);
+          clearCart(); // Xóa cart khi không có token
         }
       } catch (error) {
         console.error("Error in loadData:", error);
@@ -216,6 +249,7 @@ const StoreContextProvider = (props) => {
     searchTerm,
     filteredFoodList,
     isAuthLoading,
+    clearCart, // Thêm vào context
   };
 
   return (

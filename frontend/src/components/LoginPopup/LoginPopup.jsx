@@ -3,6 +3,7 @@ import "./LoginPopup.css";
 import { assets } from "../../assets/assets";
 import { StoreContext } from "../../context/StoreContext";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const LoginPopup = ({ setShowLogin }) => {
   const { url, setToken, setUser } = useContext(StoreContext);
@@ -16,6 +17,7 @@ const LoginPopup = ({ setShowLogin }) => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
   const onChangeHandler = (event) => {
     const name = event.target.name;
@@ -44,15 +46,23 @@ const LoginPopup = ({ setShowLogin }) => {
         setToken(response.data.token);
         setUser(response.data.user);
         localStorage.setItem("token", response.data.token);
-        setShowLogin(false);
 
-        console.log("Login successful, user role:", response.data.user.role);
+        // Thông báo thành công bằng toast
+        if (currState === "Login") {
+          toast.success("Đăng nhập thành công!");
+        } else {
+          toast.success("Đăng ký thành công!");
+        }
+
+        // Đóng popup ngay lập tức
+        setShowLogin(false);
 
         // Kiểm tra role của user và chuyển hướng nếu là admin
         if (response.data.user.role === "admin") {
           console.log("Admin detected, redirecting to admin interface...");
-          // Chuyển hướng đến admin interface (thường chạy trên port 5174)
-          window.location.href = `http://localhost:5174?token=${response.data.token}`;
+          setTimeout(() => {
+            window.location.href = `http://localhost:5174?token=${response.data.token}`;
+          }, 1000);
         } else {
           console.log("Regular user, staying on frontend");
         }
@@ -74,12 +84,9 @@ const LoginPopup = ({ setShowLogin }) => {
   return (
     <div className="login-popup">
       <form onSubmit={onLogin} className="login-popup-container">
-        <img
-          className="login-popup-close"
-          onClick={() => setShowLogin(false)}
-          src={assets.cross_icon}
-          alt=""
-        />
+        <div className="login-popup-close" onClick={() => setShowLogin(false)}>
+          ✕
+        </div>
         <div className="login-popup-title">
           <h2>{currState}</h2>
         </div>
@@ -112,21 +119,27 @@ const LoginPopup = ({ setShowLogin }) => {
               type={showPassword ? "text" : "password"}
               placeholder="Your password"
               required
-              style={{ width: "100%" }}
+              style={{ width: "100%", paddingRight: "40px" }}
             />
-            <span
-              style={{
-                position: "absolute",
-                right: 10,
-                top: 10,
-                cursor: "pointer",
-                userSelect: "none",
-                fontSize: 13,
-              }}
-              onClick={() => setShowPassword((prev) => !prev)}
-            >
-              {showPassword ? "Ẩn" : "Hiện"}
-            </span>
+            {data.password && (
+              <span
+                style={{
+                  position: "absolute",
+                  right: 12,
+                  top: "50%",
+                  transform: "translateY(-50%)",
+                  cursor: "pointer",
+                  userSelect: "none",
+                }}
+                onClick={() => setShowPassword((prev) => !prev)}
+              >
+                <img
+                  src={showPassword ? assets.hide_icon : assets.view_icon}
+                  alt=""
+                  style={{ width: 16, height: 16 }}
+                />
+              </span>
+            )}
           </div>
           {currState === "Sign Up" && (
             <div style={{ position: "relative" }}>
@@ -137,21 +150,29 @@ const LoginPopup = ({ setShowLogin }) => {
                 type={showConfirmPassword ? "text" : "password"}
                 placeholder="Confirm password"
                 required
-                style={{ width: "100%" }}
+                style={{ width: "100%", paddingRight: "40px" }}
               />
-              <span
-                style={{
-                  position: "absolute",
-                  right: 10,
-                  top: 10,
-                  cursor: "pointer",
-                  userSelect: "none",
-                  fontSize: 13,
-                }}
-                onClick={() => setShowConfirmPassword((prev) => !prev)}
-              >
-                {showConfirmPassword ? "Ẩn" : "Hiện"}
-              </span>
+              {confirmPassword && (
+                <span
+                  style={{
+                    position: "absolute",
+                    right: 12,
+                    top: "50%",
+                    transform: "translateY(-50%)",
+                    cursor: "pointer",
+                    userSelect: "none",
+                  }}
+                  onClick={() => setShowConfirmPassword((prev) => !prev)}
+                >
+                  <img
+                    src={
+                      showConfirmPassword ? assets.hide_icon : assets.view_icon
+                    }
+                    alt=""
+                    style={{ width: 16, height: 16 }}
+                  />
+                </span>
+              )}
             </div>
           )}
         </div>

@@ -16,12 +16,14 @@ const Navbar = ({ setShowLogin }) => {
     setUser,
     searchFood,
     searchTerm,
+    clearCart, // Thay setCartItems bằng clearCart
   } = useContext(StoreContext);
 
   const logout = () => {
     localStorage.removeItem("token");
     setToken("");
     setUser(null);
+    clearCart(); // Sử dụng clearCart thay vì setCartItems
     window.location.reload();
   };
 
