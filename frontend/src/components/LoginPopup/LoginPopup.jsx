@@ -13,6 +13,9 @@ const LoginPopup = ({ setShowLogin }) => {
     email: "",
     password: "",
   });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const onChangeHandler = (event) => {
     const name = event.target.name;
@@ -26,6 +29,11 @@ const LoginPopup = ({ setShowLogin }) => {
     if (currState === "Login") {
       newUrl += "/api/user/login";
     } else {
+      // Kiểm tra xác nhận mật khẩu
+      if (data.password !== confirmPassword) {
+        alert("Mật khẩu xác nhận không khớp!");
+        return;
+      }
       newUrl += "/api/user/register";
     }
 
@@ -96,14 +104,56 @@ const LoginPopup = ({ setShowLogin }) => {
             placeholder="Your email"
             required
           />
-          <input
-            name="password"
-            onChange={onChangeHandler}
-            value={data.password}
-            type="password"
-            placeholder="Your password"
-            required
-          />
+          <div style={{ position: "relative" }}>
+            <input
+              name="password"
+              onChange={onChangeHandler}
+              value={data.password}
+              type={showPassword ? "text" : "password"}
+              placeholder="Your password"
+              required
+              style={{ width: "100%" }}
+            />
+            <span
+              style={{
+                position: "absolute",
+                right: 10,
+                top: 10,
+                cursor: "pointer",
+                userSelect: "none",
+                fontSize: 13,
+              }}
+              onClick={() => setShowPassword((prev) => !prev)}
+            >
+              {showPassword ? "Ẩn" : "Hiện"}
+            </span>
+          </div>
+          {currState === "Sign Up" && (
+            <div style={{ position: "relative" }}>
+              <input
+                name="confirmPassword"
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                value={confirmPassword}
+                type={showConfirmPassword ? "text" : "password"}
+                placeholder="Confirm password"
+                required
+                style={{ width: "100%" }}
+              />
+              <span
+                style={{
+                  position: "absolute",
+                  right: 10,
+                  top: 10,
+                  cursor: "pointer",
+                  userSelect: "none",
+                  fontSize: 13,
+                }}
+                onClick={() => setShowConfirmPassword((prev) => !prev)}
+              >
+                {showConfirmPassword ? "Ẩn" : "Hiện"}
+              </span>
+            </div>
+          )}
         </div>
         <button type="submit">
           {currState === "Sign Up" ? "Create account" : "Login"}
