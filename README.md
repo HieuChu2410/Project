@@ -128,5 +128,12 @@ Dự án Food Delivery App được xây dựng với hai loại giao diện ch�
 - Danh sách sản phẩm đã thêm vào giỏ hàng: Sau khi thêm vào giỏ hàng người dùng sẽ xem được chi tiết món đã đặt số lượng nếu đặt nhiều có thể hủy thông qua dấu 'x', khi đã chốt xong ấn vào 'PROCEED TO CHECKOUT' để tiếp tục.
   ![image](https://github.com/user-attachments/assets/7b8892d8-b419-4a4d-bec2-cad28a6b352e)
 
-- Sau khi chọn xong sản phẩm khách hàng nhấn nút đặt hàng: Cần nhập đầy đủ thông tin của khách hàng, nếu đã đăng nhập thì thông tin khách hàng sẽ được tự động điền. Sau khi xác nhận hoàn tất sẽ có thông báo đặt hàng thành công và sẽ trừ số lượng sản phẩm tương ứng ở trong kho hàng.
+- Sau khi chọn xong sản phẩm khách hàng nhấn nút đặt hàng: Cần nhập đầy đủ thông tin của khách hàng để đến bước thanh toán.
  ![image](https://github.com/user-attachments/assets/79478107-dced-407c-9403-ddde9fc305d2)
+
+- Thanh toán đơn hàng: Nhập đầy đủ thông tin xong ấn nút thanh toán sẽ hiện thông báo thành công cho bạn.
+  ![image](https://github.com/user-attachments/assets/c7abdf22-25d2-4aa3-9557-f442aa5a76eb)
+  ![image](https://github.com/user-attachments/assets/1ce2cba1-ce01-46d9-ae55-f7faf78b7aa4)
+
+- Phần order của bạn: sau khi thanh toán thành công sẽ hiển thị phần thông tin món đã đặt thành công và xem nó có được vận chuyển chưa.
+   ![image](https://github.com/user-attachments/assets/e06f904e-a903-499d-a829-a9870742f669)
