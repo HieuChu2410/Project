@@ -135,5 +135,15 @@ Dự án Food Delivery App được xây dựng với hai loại giao diện ch�
   ![image](https://github.com/user-attachments/assets/c7abdf22-25d2-4aa3-9557-f442aa5a76eb)
   ![image](https://github.com/user-attachments/assets/1ce2cba1-ce01-46d9-ae55-f7faf78b7aa4)
 
-- Phần order của bạn: sau khi thanh toán thành công sẽ hiển thị phần thông tin món đã đặt thành công và xem nó có được vận chuyển chưa.
+- Phần order của bạn: Sau khi thanh toán thành công sẽ hiển thị phần thông tin món đã đặt thành công và xem nó có được vận chuyển chưa.
    ![image](https://github.com/user-attachments/assets/e06f904e-a903-499d-a829-a9870742f669)
+
+### 5. Trang quản trị (/admin)
+- Người quản trị sẽ có tài khoản riêng để có quản trị và kiểm tra đơn hàng, thông tin của khách, thêm món mới để khách có thể đặt nếu cần dưới đây là ảnh mô tả giao diện của người quản lí:
+![image](https://github.com/user-attachments/assets/0249c965-aa21-4a46-abb4-2355afecb81b)
+![image](https://github.com/user-attachments/assets/84af2492-dca5-4772-8841-0c747edf3093)
+![image](https://github.com/user-attachments/assets/0f5d312a-265e-401f-9f6b-0dc097cb2c72)
+![image](https://github.com/user-attachments/assets/38c59b15-798f-4c66-ae20-30f4a5c31b71)
+
+
+
