@@ -1,4 +1,4 @@
-# Food Delivery App - Admin Integration
+<img width="1894" height="870" alt="image" src="https://github.com/user-attachments/assets/e271d1ac-1930-493b-93dc-6a4863be6fb8" /><img width="1897" height="870" alt="image" src="https://github.com/user-attachments/assets/2821351e-a003-417a-9054-1720592d0162" /># Food Delivery App - Admin Integration
 
 ## Tích hợp Admin vào Frontend
 
@@ -108,3 +108,17 @@ Dự án Food Delivery App được xây dựng với hai loại giao diện ch�
 
 - Đăng nhập thành công sẽ hiện thông báo và có tài khoản để thực hiện việc đặt hàng.
  ![image](https://github.com/user-attachments/assets/67f96227-ba89-4844-a8f3-27bc17166237)
+
+- From đăng ký
+  ![image](https://github.com/user-attachments/assets/4311c7e6-4717-4f1e-b481-6025026383b5)
+
+- Khi nhập sai mật khẩu hoặc email sẽ thông báo lỗi
+  ![image](https://github.com/user-attachments/assets/047e79c6-059a-4ad2-b717-09ecf05cbff2)
+  
+- Điều hướng về trang đăng nhập sau khi đăng ký thành công
+  ![image](https://github.com/user-attachments/assets/44ac075a-b762-4e66-a39d-aa6321bc5d1c)
+
+### 3. Mục sản phẩm
+- Hiển thị danh sách món ăn: Phần tròn là các loại món hiện tại là có 8 loại, dưới là danh sách các món ăn theo tưng loại dưới món ăn là giá tiền từng món, dấu + là để đặt số lượng của món đó có thể tùy chỉnh đặt bao nhiêu khi chọn xong sẽ ấn vào giỏ hàng bên trên cùng để đặt.
+ ![image](https://github.com/user-attachments/assets/5f3183f6-b97d-4053-b75a-217ff9dab9ca)
+ ![image](https://github.com/user-attachments/assets/886ef279-455e-4cbe-9fe8-5543eec79182)
