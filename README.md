@@ -1,5 +1,3 @@
-<img width="1894" height="870" alt="image" src="https://github.com/user-attachments/assets/e271d1ac-1930-493b-93dc-6a4863be6fb8" /><img width="1897" height="870" alt="image" src="https://github.com/user-attachments/assets/2821351e-a003-417a-9054-1720592d0162" /># Food Delivery App - Admin Integration
-
 ## Tích hợp Admin vào Frontend
 
 Dự án này đã được tích hợp admin panel vào frontend, cho phép admin quản lý từ cùng một hệ thống với user thường.
@@ -103,6 +101,7 @@ Dự án Food Delivery App được xây dựng với hai loại giao diện ch�
   ![image](https://github.com/user-attachments/assets/8b8427fe-5d04-4e45-8094-879fc06af219)
 
 ### 2. Đăng nhập, đăng ký 
+
 - Khi ấn nút đăng nhập sẽ hiện ra from nhập email, mật khẩu.
  ![image](https://github.com/user-attachments/assets/2cb31338-6508-4068-af26-9d4e73d13905)
 
@@ -119,6 +118,15 @@ Dự án Food Delivery App được xây dựng với hai loại giao diện ch�
   ![image](https://github.com/user-attachments/assets/44ac075a-b762-4e66-a39d-aa6321bc5d1c)
 
 ### 3. Mục sản phẩm
+
 - Hiển thị danh sách món ăn: Phần tròn là các loại món hiện tại là có 8 loại, dưới là danh sách các món ăn theo tưng loại dưới món ăn là giá tiền từng món, dấu + là để đặt số lượng của món đó có thể tùy chỉnh đặt bao nhiêu khi chọn xong sẽ ấn vào giỏ hàng bên trên cùng để đặt.
  ![image](https://github.com/user-attachments/assets/5f3183f6-b97d-4053-b75a-217ff9dab9ca)
  ![image](https://github.com/user-attachments/assets/886ef279-455e-4cbe-9fe8-5543eec79182)
+
+### 4. Trang giỏ hàng
+
+- Danh sách sản phẩm đã thêm vào giỏ hàng: Sau khi thêm vào giỏ hàng người dùng sẽ xem được chi tiết món đã đặt số lượng nếu đặt nhiều có thể hủy thông qua dấu 'x', khi đã chốt xong ấn vào 'PROCEED TO CHECKOUT' để tiếp tục.
+  ![image](https://github.com/user-attachments/assets/7b8892d8-b419-4a4d-bec2-cad28a6b352e)
+
+- Sau khi chọn xong sản phẩm khách hàng nhấn nút đặt hàng: Cần nhập đầy đủ thông tin của khách hàng, nếu đã đăng nhập thì thông tin khách hàng sẽ được tự động điền. Sau khi xác nhận hoàn tất sẽ có thông báo đặt hàng thành công và sẽ trừ số lượng sản phẩm tương ứng ở trong kho hàng.
+ ![image](https://github.com/user-attachments/assets/79478107-dced-407c-9403-ddde9fc305d2)
